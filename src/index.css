@@ -1,13 +1,134 @@
-body {
+/* ==========================
+   CSS Reset - Pro Level
+   ========================== */
+
+/* 1. Universal Reset */
+*,
+*::before,
+*::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Remove Default List Styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 3. Reset Anchor Styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 4. Reset Heading and Paragraph Spacing */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* 5. Remove Default Button Styles */
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+/* 6. Remove Default Input and Textarea Styles */
+input,
+textarea {
+  all: unset;
+  box-sizing: border-box;
+}
+
+/* 7. Consistent Body Styling */
+body {
+  line-height: 1.5;
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* 8. Media Elements Reset */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 9. Disable Animations for Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* 10. Remove Default Table Spacing */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 11. Set Base Font Size (Optional, Adjust to Your Preference) */
+html {
+  font-size: 10px; /* 1rem = 16px */
+}
+
+/* 12. Set Default Focus Styles */
+:focus {
+  outline: 2px solid #0078d7; /* Accessible focus outline */
+  outline-offset: 2px;
+}
+
+/* 13. Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 14. Clear Floats (Legacy Support) */
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.main {
+  width: 100dvw;
+  height: 100dvh;
+
+  overflow: hidden;
+  align-items: start;
+
+  background: linear-gradient(
+    -45deg,
+    #7b51b3,
+    #5e51b3
+  );
+
+  display: flex;
+  justify-content: center;
+
+  padding-top: 10rem;
+}
+
+.container {
+  padding: 0;
+  margin: 0;
+
+  overflow: hidden;
+
+  border-radius: 1rem;
+  background-color: red;
 }
