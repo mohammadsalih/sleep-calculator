@@ -7,6 +7,7 @@ function Home() {
     <main className='main'>
       <MainContainer>
         <SleepInfo />
+
         <SleepForm />
       </MainContainer>
     </main>

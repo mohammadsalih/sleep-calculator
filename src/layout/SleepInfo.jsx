@@ -1,5 +1,5 @@
 function SleepInfo() {
-  return <div>hey</div>;
+  return <div className='sleep-info'>hey</div>;
 }
 
 export default SleepInfo;

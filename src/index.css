@@ -124,11 +124,50 @@ html {
 }
 
 .container {
+  position: relative;
+
   padding: 0;
   margin: 0;
+
+  max-width: 100rem;
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1.4fr;
 
   overflow: hidden;
 
   border-radius: 1rem;
-  background-color: red;
+
+  text-transform: capitalize;
+}
+
+.sleep-info {
+  padding: 5rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+
+  background: linear-gradient(
+      -45deg,
+      #5e51b350,
+      #7b51b350
+    ),
+    /* Gradient */ url('../public/moon.jpg'); /* Background image */
+  background-size: cover; /* Make the image cover the container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Avoid repeating the image */
+}
+
+.sleep-form {
+  padding: 5rem 10rem;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4rem;
+
+  background: #fafafa;
 }
