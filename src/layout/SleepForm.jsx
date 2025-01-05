@@ -1,7 +1,9 @@
+import Logo from '../ui/Logo';
+
 function SleepForm() {
   return (
     <div className='sleep-form'>
-      logo
+      <Logo />
       <p>j</p>
       <p>j</p>
     </div>
