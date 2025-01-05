@@ -2,7 +2,7 @@ function Logo() {
   return (
     <header className='header'>
       <img
-        src='moon.jpg'
+        src='sleep-calculator-icon.png'
         alt='logo'
         className='logo'
       />
