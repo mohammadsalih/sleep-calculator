@@ -1,55 +1,18 @@
-import FormRow from '../../../ui/FormRow';
+import AgeInput from '../../../ui/AgeInput';
 import GenderSwitch from '../../../ui/GenderSwitch';
+import TimeInput from '../../../ui/TimeInput';
+import TypeInput from '../../../ui/TypeInput';
 
 function Form() {
   return (
     <form>
-      <FormRow
-        label='gender'
-        id='gender'
-      >
-        <GenderSwitch />
-      </FormRow>
+      <GenderSwitch />
 
-      <FormRow
-        label='age'
-        id='age'
-      >
-        <input
-          className='input age'
-          type='number'
-          id='age'
-        />
-      </FormRow>
+      <AgeInput />
 
-      <FormRow
-        label='type'
-        id='type'
-      >
-        <select
-          name='type'
-          id='type'
-          className='select'
-        >
-          <option value='wake-up-time'>
-            Calculate wake up time
-          </option>
-          <option value='wake-up-time'>
-            Calculate sleep time
-          </option>
-        </select>
-      </FormRow>
+      <TypeInput />
 
-      <FormRow
-        label='time'
-        id='time'
-      >
-        <input
-          type='time'
-          id='time'
-          className='input'
-        />
-      </FormRow>
+      <TimeInput />
     </form>
   );
 }

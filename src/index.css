@@ -229,6 +229,7 @@ html {
 }
 
 .form-row-input-container {
+  height: 5rem;
   padding: 0.5rem;
 
   border-radius: 1.5rem;
@@ -240,6 +241,7 @@ html {
   padding: 0 1rem;
 
   width: 100%;
+  height: 100%;
 
   background-color: #fafafa;
   color: #3a3a3a;
@@ -252,6 +254,7 @@ html {
   padding: 0.5rem 1rem;
 
   width: 100%;
+  height: 100%;
 
   font-size: 1.8rem;
   font-weight: 500;
@@ -276,21 +279,33 @@ option {
 
 .gender-switch {
   display: flex;
-  border: 1px solid #ccc;
-  border-radius: 30px;
-  overflow: hidden;
+  justify-content: space-around;
+
+  width: 100%;
+  height: 100%;
+
   cursor: pointer;
 }
 
 .option {
-  padding: 10px 20px;
-  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 48%;
+  height: 100%;
+
   text-align: center;
+
   background-color: #f1f1f1;
+  color: #3a3a3a;
+
   transition: background-color 0.3s;
+
+  border-radius: 1rem;
 }
 
 .option.selected {
-  background-color: #4caf50;
+  background-color: #5e51b3;
   color: white;
 }
