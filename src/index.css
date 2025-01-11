@@ -112,7 +112,7 @@ html {
 
   padding: 1rem;
 
-  overflow: hidden;
+  overflow-x: hidden;
   align-items: start;
 
   background: linear-gradient(
@@ -140,24 +140,6 @@ html {
   border-radius: 1rem;
 
   text-transform: capitalize;
-}
-
-.sleep-info {
-  padding: 5rem;
-
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(7, 1fr);
-
-  background: linear-gradient(
-      -45deg,
-      #5e51b350,
-      #7b51b350
-    ),
-    /* Gradient */ url('../public/moon.jpg'); /* Background image */
-  background-size: cover; /* Make the image cover the container */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Avoid repeating the image */
 }
 
 .sleep-form {
@@ -310,13 +292,176 @@ option {
   color: white;
 }
 
-.sleep-time-container {
-  grid-row: 3 / 6;
-  grid-column: span 2;
+.sleep-info {
+  padding: 5rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, auto);
+
+  background: linear-gradient(
+      -45deg,
+      #5e51b350,
+      #7b51b350
+    ),
+    /* Gradient */ url('../public/moon.jpg'); /* Background image */
+  background-size: cover; /* Make the image cover the container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Avoid repeating the image */
+  color: #f1f1f1;
 }
 
-@media (max-width: 1000px) {
+.sleep-time-container {
+  padding-top: 25%;
+
+  grid-column: span 2;
+  grid-row: 3 / 5;
+
+  text-align: center;
+
+  font-size: 6rem;
+  font-weight: 600;
+  text-align: center;
+}
+.sleep-time-container span {
+  display: block;
+
+  font-size: 3rem;
+}
+
+.main-sleep-time {
+  grid-column: span 2;
+
+  font-size: 6rem;
+  font-weight: 600;
+  text-align: center;
+}
+.main-sleep-time span {
+  display: block;
+
+  font-size: 3rem;
+}
+
+.sleep-cycles {
+  grid-column: span 2;
+  grid-row: 3 / 5;
+
+  font-size: 3rem;
+  font-weight: 500;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 2rem;
+  row-gap: 1rem;
+
+  text-align: center;
+}
+.sleep-cycle span {
+  display: block;
+  font-size: 2rem;
+}
+.sleep-cycles-description {
+  padding: 0;
+  margin: 0;
+
+  grid-column: span 2;
+  grid-row: 6;
+
+  text-align: center;
+
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.sleep-cycles-description span {
+  display: block;
+}
+
+@media (max-width: 1050px) {
+  .main {
+    padding: 3rem 1rem;
+  }
+
   .container {
     flex-direction: column-reverse;
   }
+
+  .sleep-form {
+    padding: 5rem 2.5rem;
+  }
+
+  .logo {
+    width: 9rem;
+    height: 9rem;
+  }
+  .header-content {
+    padding-top: 0rem;
+  }
+  .header-content h2 {
+    font-size: 3rem;
+  }
+  .header-content p {
+    display: none;
+  }
+
+  .sleep-info {
+    padding: 5rem 2.5rem;
+
+    row-gap: 2rem;
+  }
+
+  .sleep-time-container {
+    padding-top: 0;
+  }
+
+  .sleep-cycles {
+    column-gap: 0rem;
+    row-gap: 4rem;
+  }
 }
+
+/* fix tablet size mobile and pc are done  */
+/* 
+@media (max-width: 1050px) {
+  .main {
+    padding: 3rem 1rem;
+  }
+
+  .container {
+    flex-direction: column-reverse;
+  }
+
+  .sleep-form {
+    padding: 5rem 2.5rem;
+  }
+
+  .logo {
+    width: 9rem;
+    height: 9rem;
+  }
+  .header-content {
+    padding-top: 0rem;
+  }
+  .header-content h2 {
+    font-size: 3rem;
+  }
+  .header-content p {
+    display: none;
+  }
+
+  .sleep-info {
+    padding: 5rem 2.5rem;
+
+    row-gap: 2rem;
+  }
+
+  .sleep-time-container {
+    padding-top: 0;
+  }
+
+  .sleep-cycles {
+    column-gap: 0rem;
+    row-gap: 4rem;
+  }
+} */

@@ -1,8 +1,9 @@
 function SleepTimeContainer() {
   return (
     <div className='sleep-time-container'>
-      <h2 className='cycles'>
-        12:12 <span>AM</span>
+      <h2>
+        <span>best time to sleep</span>
+        12:12 AM
       </h2>
     </div>
   );
