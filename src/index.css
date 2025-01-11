@@ -309,3 +309,14 @@ option {
   background-color: #5e51b3;
   color: white;
 }
+
+.sleep-time-container {
+  grid-row: 3 / 6;
+  grid-column: span 2;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+}
