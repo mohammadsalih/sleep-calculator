@@ -6,9 +6,10 @@ import {
 
 // Initial State
 const initialState = {
-  userProfile: { age: null, gender: 'male' }, // User's age and gender
+  userProfile: { age: 0, gender: 'male' }, // User's age and gender
   calculationType: 'sleepTime', // "sleepTime" or "wakeUpTime"
-  queryTime: null, // Input time (wake-up time or sleep time)
+  queryTime: '08:00', // Input time (wake-up time or sleep time)
+  showInfo: false,
   sleepTime: null, // Calculated single best sleep time
   wakeUpTimes: [], // Array of possible wake-up times
 };
@@ -42,6 +43,7 @@ function sleepReducer(state, action) {
         ...state,
         queryTime: action.payload,
       };
+
     case 'setSleepTime':
       return {
         ...state,
@@ -67,6 +69,7 @@ export function SleepProvider({ children }) {
       queryTime,
       sleepTime,
       wakeUpTimes,
+      showInfo,
     },
     dispatch,
   ] = useReducer(sleepReducer, initialState);
@@ -80,6 +83,7 @@ export function SleepProvider({ children }) {
         queryTime,
         sleepTime,
         wakeUpTimes,
+        showInfo,
         dispatch,
       }}
     >
