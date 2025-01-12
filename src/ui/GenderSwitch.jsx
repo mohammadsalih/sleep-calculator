@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import FormRow from './FormRow';
+import { useSleepContext } from '../data/Context';
 
-const GenderSwitch = () => {
+function GenderSwitch() {
   const [selected, setSelected] =
     useState('male');
 
   const handleSelect = (gender) => {
     setSelected(gender);
   };
+
+  const { gender } = useSleepContext();
+  console.log(gender);
 
   return (
     <FormRow
@@ -36,6 +40,6 @@ const GenderSwitch = () => {
       </div>
     </FormRow>
   );
-};
+}
 
 export default GenderSwitch;

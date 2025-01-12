@@ -6,7 +6,7 @@ function Home() {
   return (
     <main className='main'>
       <MainContainer>
-        <SleepInfo />
+        {/* <SleepInfo /> */}
 
         <SleepForm />
       </MainContainer>
