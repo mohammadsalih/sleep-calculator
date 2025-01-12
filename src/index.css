@@ -208,6 +208,50 @@ html {
 
   font-weight: 500;
   font-size: 2rem;
+
+  /* Initial State for Animation */
+  transform: translateY(-50px);
+  opacity: 0;
+  height: 0; /* Start fully collapsed */
+  overflow: hidden; /* Prevent content overflow */
+  animation: formRowAppear 1s
+    cubic-bezier(0.4, 0, 0.2, 1) forwards; /* Apple-like smooth curve */
+}
+
+.form-row:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.form-row:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.form-row:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes formRowAppear {
+  0% {
+    transform: translateY(
+      -50px
+    ); /* Simulate gravity pulling it down */
+    opacity: 0;
+    height: 0;
+  }
+  50% {
+    /* transform: translateY(
+      -10px
+    ); */
+    /* Slight bounce effect like easing into position */
+    opacity: 0.6;
+    height: 5rem;
+    /* Start expanding */
+  }
+  100% {
+    transform: translateY(0); /* Final position */
+    opacity: 1; /* Fully visible */
+    height: auto; /* Full height */
+  }
 }
 
 .form-row-input-container {

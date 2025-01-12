@@ -6,7 +6,7 @@ import {
 
 // Initial State
 const initialState = {
-  userProfile: { age: null, gender: null }, // User's age and gender
+  userProfile: { age: null, gender: 'male' }, // User's age and gender
   calculationType: 'sleepTime', // "sleepTime" or "wakeUpTime"
   queryTime: null, // Input time (wake-up time or sleep time)
   sleepTime: null, // Calculated single best sleep time
@@ -16,27 +16,38 @@ const initialState = {
 // Reducer Function
 function sleepReducer(state, action) {
   switch (action.type) {
-    case 'SET_USER_PROFILE':
+    case 'setUserGender':
       return {
         ...state,
-        userProfile: action.payload,
+        userProfile: {
+          ...state.userProfile,
+          gender: action.payload,
+        },
       };
-    case 'SET_CALCULATION_TYPE':
+    case 'setUserAge': // This case appears redundant with setUserProfile but kept as requested
+      return {
+        ...state,
+        userProfile: {
+          ...state.userProfile,
+          age: action.payload,
+        },
+      };
+    case 'setCalculationType':
       return {
         ...state,
         calculationType: action.payload,
       };
-    case 'SET_QUERY_TIME':
+    case 'setQueryTime':
       return {
         ...state,
         queryTime: action.payload,
       };
-    case 'SET_SLEEP_TIME':
+    case 'setSleepTime':
       return {
         ...state,
         sleepTime: action.payload,
       };
-    case 'SET_WAKE_UP_TIMES':
+    case 'setWakeUpTimes':
       return {
         ...state,
         wakeUpTimes: action.payload,

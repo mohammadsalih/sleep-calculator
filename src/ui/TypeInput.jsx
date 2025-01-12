@@ -1,6 +1,10 @@
+import { useSleepContext } from '../data/Context';
 import FormRow from './FormRow';
 
 function TypeInput() {
+  const { calculationType, dispatch } =
+    useSleepContext();
+
   return (
     <FormRow
       label='type'
@@ -10,11 +14,18 @@ function TypeInput() {
         name='type'
         id='type'
         className='select'
+        value={calculationType}
+        onChange={(e) => {
+          dispatch({
+            type: 'setCalculationType',
+            payload: e.target.value,
+          });
+        }}
       >
-        <option value='wake-up-time'>
+        <option value='wakeUpTime'>
           Calculate wake up time
         </option>
-        <option value='wake-up-time'>
+        <option value='sleepTime'>
           Calculate sleep time
         </option>
       </select>

@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
 import FormRow from './FormRow';
 import { useSleepContext } from '../data/Context';
 
 function GenderSwitch() {
-  const [selected, setSelected] =
-    useState('male');
-
   const handleSelect = (gender) => {
-    setSelected(gender);
+    dispatch({
+      type: 'setUserGender',
+      payload: gender,
+    });
   };
 
-  const { gender } = useSleepContext();
-  console.log(gender);
+  const { gender, dispatch } = useSleepContext();
 
   return (
     <FormRow
@@ -21,7 +19,7 @@ function GenderSwitch() {
       <div className='gender-switch'>
         <div
           className={`option ${
-            selected === 'male' ? 'selected' : ''
+            gender === 'male' ? 'selected' : ''
           }`}
           onClick={() => handleSelect('male')}
         >
@@ -29,9 +27,7 @@ function GenderSwitch() {
         </div>
         <div
           className={`option ${
-            selected === 'female'
-              ? 'selected'
-              : ''
+            gender === 'female' ? 'selected' : ''
           }`}
           onClick={() => handleSelect('female')}
         >
