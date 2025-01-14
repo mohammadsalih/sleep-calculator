@@ -1,10 +1,21 @@
 import { useSleepContext } from '../data/Context';
 
 function SubmitButton() {
-  const { dispatch } = useSleepContext();
+  const {
+    dispatch,
+    calculationType,
+    sleepTimes,
+    wakeUpTimes,
+  } = useSleepContext();
 
   const handleCalculateResult = function () {
-    console.log('hey');
+    if (calculationType === 'wakeUpTime') {
+      dispatch({ type: 'setWakeUpTimes' });
+      console.log(wakeUpTimes);
+    } else {
+      dispatch({ type: 'setSleepTimes' });
+      console.log(sleepTimes);
+    }
   };
 
   return (

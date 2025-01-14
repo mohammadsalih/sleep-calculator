@@ -15,7 +15,7 @@ function Form() {
 
       <TypeInput />
 
-      {calculationType === 'wakeUpTime' && (
+      {calculationType === 'sleepTime' && (
         <TimeInput />
       )}
     </form>
