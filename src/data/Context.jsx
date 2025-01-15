@@ -47,13 +47,19 @@ function sleepReducer(state, action) {
     case 'setSleepTimes': {
       const {
         queryTime,
-        userProfile: { gender },
+        userProfile: { gender, age },
       } = state;
+
       const sleepCycle = 90; // 90 minutes per cycle
-      const totalCycles = 6; // 6 cycles = 9 hours of sleep
       const fallAsleepTime = 15; // 15 minutes to fall asleep
       const genderAdjustment =
         gender === 'female' ? 20 : 0; // Add 20 minutes for females
+
+      // Adjust total cycles based on age
+      let totalCycles = 6; // Default: 6 cycles (9 hours)
+      if (age < 18)
+        totalCycles = 7; // Teens and children might need 10+ hours (7 cycles)
+      else if (age >= 65) totalCycles = 5; // Seniors might need 7.5 hours (5 cycles)
 
       // Parse wake-up time to minutes
       const [wakeHour, wakeMinute] = queryTime
@@ -62,7 +68,7 @@ function sleepReducer(state, action) {
       const wakeTimeInMinutes =
         (wakeHour * 60 + wakeMinute) % 1440;
 
-      // Calculate sleep times in reverse (subtract 90-minute cycles + 15 mins to fall asleep)
+      // Calculate sleep times in reverse (subtract 90-minute cycles + fall asleep + gender adjustment)
       const sleepTimes = [];
       for (let i = 1; i <= totalCycles; i++) {
         const sleepTimeInMinutes =
@@ -95,13 +101,19 @@ function sleepReducer(state, action) {
 
     case 'setWakeUpTimes': {
       const {
-        userProfile: { gender },
+        userProfile: { gender, age },
       } = state;
+
       const sleepCycle = 90; // 90 minutes per cycle
-      const totalCycles = 6; // 6 cycles = 9 hours of sleep
       const fallAsleepTime = 15; // 15 minutes to fall asleep
       const genderAdjustment =
         gender === 'female' ? 20 : 0; // Add 20 minutes for females
+
+      // Adjust total cycles based on age
+      let totalCycles = 6; // Default: 6 cycles (9 hours)
+      if (age < 18)
+        totalCycles = 7; // Teens and children might need 10+ hours (7 cycles)
+      else if (age >= 65) totalCycles = 5; // Seniors might need 7.5 hours (5 cycles)
 
       // Get the current time
       const now = new Date();
@@ -110,7 +122,7 @@ function sleepReducer(state, action) {
       const currentTimeInMinutes =
         (currentHour * 60 + currentMinute) % 1440;
 
-      // Calculate wake-up times (add 90-minute cycles + 15 mins to fall asleep)
+      // Calculate wake-up times (add 90-minute cycles + fall asleep + gender adjustment)
       const wakeUpTimes = [];
       for (let i = 1; i <= totalCycles; i++) {
         const wakeTimeInMinutes =
